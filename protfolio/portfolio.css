@@ -312,7 +312,7 @@ body.dark-mode .social-icons a:hover {
 }
 
 .text-animation span::before {
-  content: "Frontend Developer";
+  content: "Front-end Developer";
   color: var(--main-color);
   animation: words 20s infinite;
 }
