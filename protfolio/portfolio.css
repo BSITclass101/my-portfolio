@@ -19,8 +19,8 @@
   --text-color: #1a1a1a;
   --main-color: hsl(250, 59%, 50%);
   --card-bg: #ffffff;
-  --card-shadow: rgba(0, 0, 0, 0.08);
-  --card-shadow-hover: rgba(0, 0, 0, 0.15);
+  --card-shadow: rgba(0, 0, 0, 0.05);
+  --card-shadow-hover: rgba(0, 0, 0, 0.12);
   --input-bg: #f0f0f0;
   --border-color: #eaeaea;
   --heading-color: #2b2b6b;
@@ -36,8 +36,8 @@ body.dark-mode {
   --text-color: #f0f0f0;
   --main-color: hsl(250, 80%, 65%);
   --card-bg: #1e1e35;
-  --card-shadow: rgba(0, 0, 0, 0.4);
-  --card-shadow-hover: rgba(107, 63, 160, 0.5);
+  --card-shadow: rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: rgba(107, 63, 160, 0.4);
   --input-bg: #252540;
   --border-color: #333355;
   --heading-color: #b8a8e8;
@@ -240,7 +240,7 @@ body.dark-mode .theme-btn i {
 }
 
 /* ============================
-   BAGONG DAGDAG: DOWNLOAD CV BUTTON
+   DOWNLOAD CV BUTTON
    ============================ */
 .btn-cv {
   display: inline-flex;
@@ -312,7 +312,7 @@ body.dark-mode .social-icons a:hover {
 }
 
 .text-animation span::before {
-  content: "Front-end Developer";
+  content: "Frontend Developer";
   color: var(--main-color);
   animation: words 20s infinite;
 }
@@ -334,11 +334,11 @@ body.dark-mode .social-icons a:hover {
 }
 
 @keyframes words {
-  0%, 20% { content: "Front-end Developer"; }
+  0%, 20% { content: "Frontend Developer"; }
   21%, 40% { content: "UI/UX Designer"; }
-  41%, 60% { content: "Front-end Developer"; }
+  41%, 60% { content: "Frontend Developer"; }
   61%, 80% { content: "UI/UX Designer"; }
-  81%, 90% { content: "Front-end Developer"; }
+  81%, 90% { content: "Frontend Developer"; }
 }
 
 @keyframes typing {
@@ -421,7 +421,7 @@ body.dark-mode .social-icons a:hover {
 }
 
 /* ============================
-   SKILLS SECTION
+   SKILLS SECTION (TRICK PARA SA PUTING BG)
    ============================ */
 .skills {
   min-height: 100vh;
@@ -445,6 +445,16 @@ body.dark-mode .social-icons a:hover {
   width: 100%;
   max-width: 500px;
   height: auto;
+  display: block;
+  transition: all 0.4s ease;
+}
+
+/* Dito natin papatayin ang puti sa Dark mode */
+body.dark-mode .skills-illustration {
+  /* Ang screen blend mode ay ginagawang transparent ang itim/puti */
+  mix-blend-mode: screen;
+  /* Dinadagdagan natin ng brightness para hindi maging multo */
+  filter: brightness(1.1) contrast(1.1);
 }
 
 .skills-content {
@@ -538,7 +548,7 @@ body.dark-mode .social-icons a:hover {
   font-weight: 800;
   color: var(--heading-color);
   line-height: 1.05;
-  margin-bottom: 7rem;
+  margin-bottom: 5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: color 0.4s ease;
@@ -546,9 +556,9 @@ body.dark-mode .social-icons a:hover {
 
 .projects-box {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 3rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -556,11 +566,10 @@ body.dark-mode .social-icons a:hover {
   display: flex;
   flex-direction: column;
   background-color: var(--card-bg);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 20px var(--card-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease,
-    background-color 0.4s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease;
 }
 
 .projects-card:hover {
@@ -572,7 +581,7 @@ body.dark-mode .social-icons a:hover {
 .project-mockup {
   position: relative;
   width: 100%;
-  height: 220px;
+  height: 200px; 
   background-color: #1a1a1a;
   background-size: cover;
   background-position: center;
@@ -581,7 +590,7 @@ body.dark-mode .social-icons a:hover {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 25px;
+  padding: 20px;
 }
 
 .project-mockup::before {
@@ -591,7 +600,7 @@ body.dark-mode .social-icons a:hover {
   background: inherit;
   background-size: cover;
   background-position: center;
-  filter: blur(6px) brightness(0.6);
+  filter: blur(8px) brightness(0.5);
   z-index: 0;
 }
 
@@ -599,7 +608,7 @@ body.dark-mode .social-icons a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(45, 10, 95, 0.4);
+  background: rgba(45, 10, 95, 0.3);
   z-index: 0;
 }
 
@@ -611,7 +620,7 @@ body.dark-mode .social-icons a:hover {
 .laptop-mockup {
   position: relative;
   width: 55%;
-  max-width: 260px;
+  max-width: 200px; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -623,9 +632,9 @@ body.dark-mode .social-icons a:hover {
   width: 100%;
   aspect-ratio: 16 / 10;
   background: #1a1a1a;
-  border: 5px solid #2a2a2a;
+  border: 4px solid #2a2a2a;
   border-bottom: none;
-  border-radius: 6px 6px 0 0;
+  border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   position: relative;
@@ -641,9 +650,9 @@ body.dark-mode .social-icons a:hover {
 
 .laptop-base {
   width: 115%;
-  height: 8px;
+  height: 7px;
   background: linear-gradient(180deg, #3a3a3a, #1f1f1f);
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 8px 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   position: relative;
 }
@@ -654,7 +663,7 @@ body.dark-mode .social-icons a:hover {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 35px;
+  width: 30px;
   height: 3px;
   background: #0d0d0d;
   border-radius: 0 0 3px 3px;
@@ -662,14 +671,14 @@ body.dark-mode .social-icons a:hover {
 
 .phone-mockup {
   position: absolute;
-  right: 16%;
-  bottom: 10%;
-  width: 15%;
-  max-width: 80px;
+  right: 14%;
+  bottom: 8%;
+  width: 14%;
+  max-width: 60px;
   aspect-ratio: 9 / 19.5;
   background: #1a1a1a;
-  border: 3px solid #2a2a2a;
-  border-radius: 14px;
+  border: 2px solid #2a2a2a;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.55);
   transition: transform 0.5s ease;
@@ -683,7 +692,7 @@ body.dark-mode .social-icons a:hover {
   left: 50%;
   transform: translateX(-50%);
   width: 40%;
-  height: 5px;
+  height: 4px;
   background: #1a1a1a;
   border-radius: 0 0 5px 5px;
   z-index: 3;
@@ -693,7 +702,7 @@ body.dark-mode .social-icons a:hover {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: 11px;
+  border-radius: 8px;
   background: #ffffff;
   position: relative;
   display: flex;
@@ -719,28 +728,28 @@ body.dark-mode .social-icons a:hover {
 
 /* PROJECT INFO */
 .project-info {
-  padding: 2.5rem 2rem;
+  padding: 2rem 1.8rem;
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1rem;
   flex: 1;
 }
 
 .project-info h3 {
-  font-size: 1.7rem;
-  font-weight: 800;
+  font-size: 1.3rem;
+  font-weight: 700;
   color: var(--heading-color);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  line-height: 1.35;
+  line-height: 1.4;
   transition: color 0.4s ease;
 }
 
 .project-info p {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: var(--text-color);
-  line-height: 1.6;
+  line-height: 1.5;
   font-weight: 400;
   opacity: 0.8;
   transition: color 0.4s ease;
@@ -751,17 +760,17 @@ body.dark-mode .social-icons a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
   margin-top: auto;
   padding-top: 1rem;
 }
 
 .project-tags .tag {
   display: inline-block !important;
-  padding: 0.4rem 1.1rem !important;
-  font-size: 1rem !important;
+  padding: 0.3rem 0.8rem !important;
+  font-size: 0.85rem !important;
   font-weight: 600 !important;
-  border-radius: 5rem !important;
+  border-radius: 4px !important; 
   letter-spacing: 0.3px !important;
   border: none !important;
   background-clip: border-box !important;
@@ -770,43 +779,25 @@ body.dark-mode .social-icons a:hover {
   color: #ffffff !important;
 }
 
+/* TOTOONG KULAY NG MGA LANGUAGES */
+.project-tags .tag.react { background-color: #20232a !important; color: #61dafb !important; -webkit-text-fill-color: #61dafb !important; border: 1px solid #61dafb !important; }
 .project-tags .tag.php { background-color: #777bb4 !important; }
-.project-tags .tag.mysql { background-color: #00758f !important; }
-.project-tags .tag.js {
-  background-color: #f0db4f !important;
-  -webkit-text-fill-color: #323330 !important;
-  color: #323330 !important;
-}
-.project-tags .tag.android { background-color: #a4c639 !important; }
-.project-tags .tag.codeigniter { background-color: #dd4814 !important; }
-.project-tags .tag.jwt { background-color: #000000 !important; }
-.project-tags .tag.bootstrap { background-color: #7952b3 !important; }
+.project-tags .tag.tailwind { background-color: #38bdf8 !important; color: #0f172a !important; -webkit-text-fill-color: #0f172a !important; }
+.project-tags .tag.js { background-color: #f7df1e !important; color: #000 !important; -webkit-text-fill-color: #000 !important; }
 .project-tags .tag.html { background-color: #e34c26 !important; }
 .project-tags .tag.css { background-color: #264de4 !important; }
-.project-tags .tag.react {
-  background-color: #61dafb !important;
-  -webkit-text-fill-color: #20232a !important;
-  color: #20232a !important;
-}
-.project-tags .tag.node { background-color: #3c873a !important; }
-.project-tags .tag.mongo { background-color: #4db33d !important; }
-.project-tags .tag.tailwind {
-  background-color: #38bdf8 !important;
-  -webkit-text-fill-color: #0f172a !important;
-  color: #0f172a !important;
-}
 
 /* GITHUB LINK */
 .github-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  font-size: 1.3rem;
+  gap: 0.5rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: var(--text-color);
-  margin-top: 1.2rem;
-  padding-top: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 1.2rem;
   border-top: 1px solid var(--border-color);
   transition: color 0.3s ease, border-color 0.4s ease;
   text-decoration: none;
@@ -814,7 +805,7 @@ body.dark-mode .social-icons a:hover {
 }
 
 .github-link i {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .github-link:hover {
@@ -967,7 +958,7 @@ body.dark-mode .contact form .btn:hover {
 }
 
 /* ============================
-   RESPONSIVE — TABLET
+   RESPONSIVE — TABLET & MOBILE
    ============================ */
 @media (max-width: 1280px) {
   header { padding: 1.5rem 5%; }
@@ -995,18 +986,10 @@ body.dark-mode .contact form .btn:hover {
     max-width: 100%;
   }
 
-  .projects {
-    padding: 10rem 5% 10rem;
-  }
-
-  .contact {
-    padding: 10rem 5% 8rem;
-  }
+  .projects { padding: 10rem 5% 10rem; }
+  .contact { padding: 10rem 5% 8rem; }
 }
 
-/* ============================
-   RESPONSIVE — MOBILE
-   ============================ */
 @media (max-width: 768px) {
   header {
     padding: 1.2rem 5%;
@@ -1217,11 +1200,11 @@ body.dark-mode .contact form .btn:hover {
   /* PROJECTS */
   .projects { padding: 10rem 5% 10rem; }
   .projects-heading { font-size: 3.5rem; margin-bottom: 4rem; }
-  .projects-box { grid-template-columns: 1fr; gap: 2.5rem; }
+  .projects-box { grid-template-columns: 1fr; gap: 2rem; }
   .projects-card { border-radius: 1.2rem; }
 
-  .project-mockup { height: 200px; padding: 18px; }
-  .laptop-mockup { width: 68%; max-width: 230px; }
+  .project-mockup { height: 180px; padding: 18px; }
+  .laptop-mockup { width: 65%; max-width: 200px; }
   .laptop-screen {
     border-width: 4px;
     border-radius: 5px 5px 0 0;
@@ -1233,8 +1216,8 @@ body.dark-mode .contact form .btn:hover {
   .laptop-base::before { width: 30px; height: 3px; }
 
   .phone-mockup {
-    width: 20%;
-    max-width: 70px;
+    width: 18%;
+    max-width: 60px;
     right: 10%;
     bottom: 8%;
     border-width: 2px;
@@ -1244,22 +1227,22 @@ body.dark-mode .contact form .btn:hover {
   .phone-screen { border-radius: 8px; }
 
   .project-info {
-    padding: 2rem 1.8rem;
-    gap: 1rem;
+    padding: 1.5rem 1.2rem;
+    gap: 0.8rem;
   }
-  .project-info h3 { font-size: 1.5rem; line-height: 1.4; }
-  .project-info p { font-size: 1.25rem; line-height: 1.6; }
+  .project-info h3 { font-size: 1.3rem; line-height: 1.4; }
+  .project-info p { font-size: 1.1rem; line-height: 1.5; }
 
-  .project-tags { gap: 0.5rem; }
+  .project-tags { gap: 0.4rem; }
   .project-tags .tag {
-    padding: 0.4rem 1rem !important;
-    font-size: 0.95rem !important;
+    padding: 0.3rem 0.8rem !important;
+    font-size: 0.85rem !important;
   }
 
   .github-link {
-    font-size: 1.25rem;
-    padding-top: 1.5rem;
-    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    padding-top: 1.2rem;
+    margin-top: 1.2rem;
   }
 
   /* CONTACT */
@@ -1302,9 +1285,6 @@ body.dark-mode .contact form .btn:hover {
   .reveal { transform: translateY(30px); }
 }
 
-/* ============================
-   EXTRA SMALL DEVICES
-   ============================ */
 @media (max-width: 450px) {
   .heading { font-size: 3.2rem; }
   .home-content h1 { font-size: 4rem; }
