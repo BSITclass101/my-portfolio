@@ -312,7 +312,7 @@ body.dark-mode .social-icons a:hover {
 }
 
 .text-animation span::before {
-  content: "Frontend Developer";
+  content: "Front-end Developer";
   color: var(--main-color);
   animation: words 20s infinite;
 }
@@ -334,11 +334,11 @@ body.dark-mode .social-icons a:hover {
 }
 
 @keyframes words {
-  0%, 20% { content: "Frontend Developer"; }
+  0%, 20% { content: "Front-end Developer"; }
   21%, 40% { content: "UI/UX Designer"; }
-  41%, 60% { content: "Frontend Developer"; }
+  41%, 60% { content: "Front-end Developer"; }
   61%, 80% { content: "UI/UX Designer"; }
-  81%, 90% { content: "Frontend Developer"; }
+  81%, 90% { content: "Front-end Developer"; }
 }
 
 @keyframes typing {
